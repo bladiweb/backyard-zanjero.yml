@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+name: Proteccion de la Rama Principal
+
+on:pull_request:
+branches:
+-backyardzanjero
+jobs:
+build:
+runs-on:ubuntu-latest
+
+steps: 
+- name: configurar Node.js 
+uses:
+actions/setup-node@v2
+'14'
+-name: instalar dependencias
+run: npm install 
+-name: ejecutar pruebas
+run: npm test
